@@ -32,7 +32,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "pages",
     "users",
+    "crispy_forms",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -123,3 +125,12 @@ LOGOUT_REDIRECT_URL = "home" #? new
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+
+EMAIL_HOST = "smtp.sendgrid.net"
+EMAIL_HOST_USER = "apikey"
+EMAIL_HOST_PASSWORD = ("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")
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
