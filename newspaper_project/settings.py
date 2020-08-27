@@ -35,6 +35,9 @@ INSTALLED_APPS = [
     "pages",
     "users",
     "articles",
+    "api",
+    "rest_framework",
+    "corsheaders",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,6 +50,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  # ? new
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -129,6 +133,14 @@ STATIC_URL = '/static/'
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 EMAIL_BACKEND = "django.core.mail.backends.consle.EmailBackend"
+REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.AllowAny",]
+}
+
+CORS_ORIGIN_WHITELIST =(
+    "http://localhost:3000",
+    "http://localhost:8000",
+)
 
 # EMAIL_HOST = "smtp.sendgrid.net"
 # EMAIL_HOST_USER = "apikey"
