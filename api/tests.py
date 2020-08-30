@@ -25,7 +25,7 @@ class ArticleModelTest (TestCase):
 class CustomUserModelTest (TestCase):
     @classmethod
     def setUpTestData(cls):
-        CustomUser.object.Create( username="your name", email =" your e-mail")
+        CustomUser.object.Create( id="your id",username="your name")
 
     def test_username_content(self):
         users = CustomUser.object.get(id=2)

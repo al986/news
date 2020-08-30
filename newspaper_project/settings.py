@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "articles",
     "api",
     "rest_framework",
+    
     "corsheaders",
     'django.contrib.admin',
     'django.contrib.auth',
@@ -135,6 +136,8 @@ CRISPY_TEMPLATE_PACK = "bootstrap4"
 EMAIL_BACKEND = "django.core.mail.backends.consle.EmailBackend"
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.AllowAny",]
+   
+
 }
 
 CORS_ORIGIN_WHITELIST =(

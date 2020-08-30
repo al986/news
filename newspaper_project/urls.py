@@ -23,8 +23,8 @@ urlpatterns = [
     path("users/",include("django.contrib.auth.urls")),
     path("articles/",include("articles.urls")),
     path("",include("pages.urls")),
+    path("api/",include("api.urls")),
     path("api/v1/" ,include("api.urls")),
-    path("api/v2/",include("api.urls")),
     path("api-auth/", include ("rest_framework.urls")),
-    
+    path("api/v1/rest-auth/", include("rest_auth.urls")),
 ]

@@ -1,22 +1,25 @@
+from  django.urls import path
 from django.urls import path
+from django.views import ListArticle, ArticleUpdateView, ArticleDeleteView, DetailArticle, ArticleCreateView
 
-from .views import (
-    ArticleAPIView ,
-    ListArticle , 
+from django.views import(
+    ListArticle,
+    ArticleUpdateView,
+    ArticleDeleteView,
     DetailArticle,
-    ListCustomUser,
+    ArticleCreateView, ListCustomUser,
     DetailCustomUser,
 )
+from rest_framework.routers import SimpleRouter
+
     
 
 
 
 urlpatterns = [
-    path("",ArticleAPIView.as_view()),
-    path("<int:pk>/", ListArticle.as_view()),
-    path("<int:pk>/",DetailArticle.as_view()),
-    path("<int:pk>/", ListCustomUser.as_view()),
-    path("<int:pk>/",DetailCustomUser.as_view()),
-    
-    
+    path("users/", ListCustomUser.as_view()),
+    path("users/<int:pk>/", DetailCustomUser.as_view()),
+    path("<int:pk>/edit/", ArticleUpdateView.as_view(), name="article_edit"),
+    path("<int:pk>/", DetailArticle.as_view(), name="article_detail"),
+    path("<int:pk>/delete/", ArticleDeleteView.as_view(), name="article_delete"),
 ]

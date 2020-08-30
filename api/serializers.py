@@ -7,13 +7,14 @@ from users.models import CustomUser
 class ArticleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Article
-        fields = ("title","body",)
+        fields = ("id","title","body",)
+        fields = ("title","body")
 
 
 class CustomUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = Article
-        fields = ("username","email",)
+        fields = ("id","username")
 
 
 
